@@ -37,7 +37,7 @@ After installing the driver software, install ROS 2 Humble is required, if the i
 
 ```sh
 cd ~
-git clone https://github.com/mangdangroboticsclub/mini_pupper_ros.git -b ros2-dev mini_pupper_ros
+git clone https://github.com/iras-mpark/mini_pupper_ros.git -b ros2-dev mini_pupper_ros
 cd mini_pupper_ros
 ./pupper_install.sh
 ```
@@ -58,7 +58,7 @@ Ubuntu 22.04 + ROS 2 Humble is required.
 
 ```sh
 cd ~
-git clone https://github.com/mangdangroboticsclub/mini_pupper_ros.git -b ros2-dev mini_pupper_ros
+git clone https://github.com/iras-mpark/mini_pupper_ros.git -b ros2-dev mini_pupper_ros
 cd mini_pupper_ros
 ./pc_install.sh
 ```
@@ -88,7 +88,7 @@ Compare the output and check if they are the same in both terminals:
 
 Example output:
 
-![check_ROS_DOMAIN_ID.png](https://github.com/mangdangroboticsclub/mini_pupper_ros/blob/ab89763e788d413c3aafd302cad849a417732fe6/imgs/check_ROS_DOMAIN_ID.png)
+![check_ROS_DOMAIN_ID.png](https://github.com/iras-mpark/mini_pupper_ros/blob/ab89763e788d413c3aafd302cad849a417732fe6/imgs/check_ROS_DOMAIN_ID.png)
 
 If the __ID are different in both terminal or there is no output__ of the above commnand, you will have to set the ROS_DOMAIN_ID to the same number using the following command (which number is used does not matter):
 
@@ -122,7 +122,7 @@ ros2 node list
 
 Compare the output in both terminals:
 
-![nodeList.png](https://github.com/mangdangroboticsclub/mini_pupper_ros/blob/ab89763e788d413c3aafd302cad849a417732fe6/imgs/nodeList.png)
+![nodeList.png](https://github.com/iras-mpark/mini_pupper_ros/blob/ab89763e788d413c3aafd302cad849a417732fe6/imgs/nodeList.png)
 
 If the output in __both terminals shows the same list of node__ which is similar to the picture, your PC and the mini pupper is connected. The following steps can be proceeded.
 __Note that the node list depends on the nodes in progress, which may not be exactly the same from the image.__
@@ -417,7 +417,7 @@ limitations under the License.
 * Q. Is ROS 2 Foxy/Galactic supported?
   * A. No. ROS 2 Humble only for now.
 * Q. `colcon build` shows `1 package had stderr output: mini_pupper_driver`.
-  * A. The following warnings can be safely ignored. See [mini_pupper_ros#45](https://github.com/mangdangroboticsclub/mini_pupper_ros/pull/45#discussion_r1104759104) for details.
+  * A. The following warnings can be safely ignored. See [mini_pupper_ros#45](https://github.com/iras-mpark/mini_pupper_ros/pull/45#discussion_r1104759104) for details.
   ```
   Starting >>> mini_pupper_description
   --- stderr: mini_pupper_driver
