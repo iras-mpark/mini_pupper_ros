@@ -46,8 +46,8 @@ fi
 source /opt/ros/humble/setup.bash
 
 #clone mini pupper 2 ros2 repo
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
+mkdir -p ~/minipupper_ros2_ws/src
+cd ~/minipupper_ros2_ws/src
 if ! [ -d "mini_pupper_ros" ]; then
   git clone https://github.com/mangdangroboticsclub/mini_pupper_ros.git -b ros2-dev mini_pupper_ros
 fi
@@ -59,7 +59,7 @@ touch mini_pupper_ros/mini_pupper_gazebo/AMENT_IGNORE
 touch mini_pupper_ros/mini_pupper_navigation/AMENT_IGNORE
 
 # install dependencies without unused heavy packages
-cd ~/ros2_ws
+cd ~/minipupper_ros2_ws
 rosdep install --from-paths src --ignore-src -r -y --skip-keys=joint_state_publisher_gui --skip-keys=rviz2 --skip-keys=gazebo_plugins --skip-keys=velodyne_gazebo_plugins
 sudo apt install ros-humble-teleop-twist-keyboard
 sudo apt install ros-humble-teleop-twist-joy
@@ -71,10 +71,10 @@ MAKEFLAGS=-j1 colcon build --executor sequential --symlink-install
 
 # show IP address on LCD when boot up
 cd ~/mini_pupper_ros/
-sudo mv robot.service /etc/systemd/system/
+sudo cp robot.service /etc/systemd/system/
 sudo mkdir -p /var/lib/minipupper/
-sudo mv run.sh /var/lib/minipupper/
-sudo mv show_ip.py /var/lib/minipupper/
+sudo cp run.sh /var/lib/minipupper/
+sudo cp show_ip.py /var/lib/minipupper/
 sudo systemctl daemon-reload
 sudo systemctl enable robot
 
